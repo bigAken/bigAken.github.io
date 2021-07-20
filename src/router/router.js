@@ -69,6 +69,5 @@ console.log('object', getMenuList(routes[0].children))
 export const menuList = getMenuList(routes[0].children)
 
 export default new Router({
-	mode: 'history',
 	routes
 })
