@@ -1,6 +1,9 @@
 const path = require('path')
 module.exports = {
-	publicPath:'./',
+	publicPath: './',
+	outputDir: 'docs',
+	assetsDir: '../docs',
+	indexPath: '../docs/index.html',
 	productionSourceMap: false,
 	// https://github.com/qingwei-li/vue-markdown-loader/issues/61
 	parallel: false,
