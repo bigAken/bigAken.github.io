@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["md"],{5708:function(n,t,e){"use strict";e.r(t);var a=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div",[e("VueUseMd",{tag:"div",staticClass:"markdown-body"})],1)},s=[],u={data:function(){return{}}},r=u,c=e("2877"),d=Object(c["a"])(r,a,s,!1,null,null,null);t["default"]=d.exports}}]);
