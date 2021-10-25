@@ -1,100 +1,88 @@
 <template>
-	<el-aside class="aside" :style="style">
-		<el-menu
-			router
-			:default-active="defaultActive"
-			class="el-menu-vertical-demo"
-			background-color="#2e3740"
-			text-color="#fff"
-			active-text-color="#ffd04b"
-			@close="handleClose"
-			:collapse="isCollapse"
-		>
-			<template v-for="(item, index) in asideMenu">
-				<template v-if="item.children">
-					<el-submenu :index="item.path" :key="index">
-						<template slot="title">
-							<i class="el-icon-location"></i>
-							<span>{{ item.meta.title }}</span>
-						</template>
-						<el-menu-item-group>
-							<el-menu-item :index="sec.fullPath" v-for="(sec, secInd) in item.children" :key="`${index}-${secInd}`">
-								{{ sec.meta.title }}
-							</el-menu-item>
-						</el-menu-item-group>
-					</el-submenu>
-				</template>
-				<template v-else>
-					<el-menu-item :index="item.path" :key="index">
-						<i class="el-icon-location"></i>
-						{{ item.meta.title }}
-					</el-menu-item>
-				</template>
-			</template>
-		</el-menu>
-		<div class="collapse-btn">
-			<span class="el-icon-star-off" @click="isCollapse = !isCollapse"></span>
+	<div class="aside-container">
+		<div class="top-user"></div>
+		<div class="catalog">
+			<el-tree
+				:data="asideMenu"
+				node-key="fullPath"
+				highlight-current
+				:props="defaultProps"
+				:current-node-key="currentNodeKey"
+				@node-click="handleNodeClick"
+			></el-tree>
 		</div>
-	</el-aside>
+	</div>
 </template>
 <script>
 export default {
 	data() {
 		return {
-			isCollapse: false
+			defaultProps: {
+				children: 'children',
+				label: 'label'
+			}
 		}
 	},
 	computed: {
-		style() {
-			return this.isCollapse ? { width: '65px' } : { width: '180px' }
-		},
 		asideMenu() {
-			return this.$store.state.menuList
+			const temp = this.$store.state.menuList.map(item => {
+				item.label = item.meta.title
+				if (Array.isArray(item.children) && item.children.length) {
+					item.children = item.children.map(child => ({ ...child, label: child.meta.title }))
+				}
+				return item
+			})
+			return temp
 		},
-		defaultActive() {
+		currentNodeKey() {
 			return this.$route.fullPath
 		}
 	},
 	methods: {
-		handleClose(key, keyPath) {
-			console.log(key, keyPath)
+		handleNodeClick(data) {
+			console.log('data', data)
+			if (Array.isArray(data.children)) {
+				return
+			}
+			const path = data.fullPath || data.path
+			console.log('path', path)
+			this.$router.push({ path: path.startsWith('/') ? path : `/${path}` })
 		}
 	}
 }
 </script>
 <style lang="scss" scoped>
-.aside {
-	overflow: hidden;
-	height: calc(100vh - 60px);
-	background-color: #2e3740;
-	transition: all 0.35s linear 0.15s;
-}
-.el-menu {
-	border-right-color: #2e3740;
-}
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-	width: 180px;
-}
-/deep/ .el-menu-item-group__title {
-	width: 0;
-	height: 0;
-	padding: 0;
-}
-
-/deep/.el-submenu__title {
-	height: 48px;
-	line-height: 48px;
-}
-.collapse-btn {
-	text-align: center;
-	> span {
-		display: inline-block;
-		width: 30px;
-		height: 30px;
-		font-size: 20px;
-		color: #545c64;
-		line-height: 30px;
-		cursor: pointer;
+.aside-container {
+	width: 150px;
+	height: 100vh;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid #e0e0e0;
+	.top-user {
+		flex-shrink: 0;
+		width: 40px;
+		height: 40px;
+		margin: 20px auto 0;
+		border-radius: 50%;
+		border: 1px solid #ccc;
+		background-color: pink;
+	}
+	.catalog {
+		width: 100%;
+		flex-grow: 1;
+		margin-top: 20px;
+		padding-bottom: 20px;
+		box-sizing: border-box;
+		overflow: scroll;
+		&::-webkit-scrollbar {
+			width: 0px;
+			height: 1px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: #e0e0e0;
+			border-radius: 3px;
+		}
 	}
 }
 </style>

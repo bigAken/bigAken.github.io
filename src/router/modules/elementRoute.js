@@ -7,7 +7,7 @@ const elementIndex = () => import(/* webpackChunkName: "elementUse" */ '@/pages/
 const table = () => import(/* webpackChunkName: "elementUse" */ '@/pages/element/table/index.vue')
 export default [
 	{
-		path: '/element',
+		path: 'element',
 		component: elementIndex,
 		redirect: {
 			path: '/element/table'

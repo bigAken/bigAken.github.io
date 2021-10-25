@@ -8,7 +8,7 @@ const promiseToUse = () => import(/* webpackChunkName: "jsRoute" */ '@/pages/jsP
 
 export default [
 	{
-		path: '/promiseToUse',
+		path: 'promiseToUse',
 		name: 'promiseToUse',
 		component: promiseToUse,
 		meta: { requiresAuth: false, title: 'promise技巧' }

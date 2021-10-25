@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<div class="markdown-body" is="VueUseMd"></div>
+		test
+		<!-- <div class="markdown-body" is="VueUseMd"></div> -->
 	</div>
 </template>
 <script>

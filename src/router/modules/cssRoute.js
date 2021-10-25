@@ -8,7 +8,7 @@ const transition = () => import(/* webpackChunkName: "cssUse" */ '@/pages/cssPag
 const cssIndex = () => import(/* webpackChunkName: "cssUse" */ '@/pages/cssPage/cssIndex.vue')
 export default [
 	{
-		path: '/css',
+		path: 'css',
 		component: cssIndex,
 		redirect: {
 			path: '/css/animation'

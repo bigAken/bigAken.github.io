@@ -1,16 +1,9 @@
 <template>
-	<div id="frame">
-		<el-container>
-			<el-header>Header</el-header>
-			<el-container>
-				<Aside></Aside>
-				<el-main>
-					<div class="router-container">
-						<router-view></router-view>
-					</div>
-				</el-main>
-			</el-container>
-		</el-container>
+	<div class="frame">
+		<Aside></Aside>
+		<div class="right-content">
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 <script>
@@ -49,22 +42,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.el-header {
-	background-color: #b3c0d1;
-	color: #333;
-	text-align: center;
-	line-height: 60px;
-}
-.el-main {
-	height: calc(100vh - 60px);
-	padding-right: 0;
-	padding-bottom: 0;
-	background-color: #fafafa;
-}
-.router-container{
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	background-color: #fff;
+.frame {
+	display: flex;
+	justify-content: flex-start;
+	.right-content {
+		padding-left: 15px;
+		flex-grow: 1;
+		overflow: scroll;
+	}
 }
 </style>

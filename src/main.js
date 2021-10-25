@@ -5,7 +5,7 @@ import plugins from '@/plugins/index'
 import '@/style/reset.css'
 import '@/style/common.scss'
 import mixin from '@/mixins/mixin.js'
-import '@/theme/index.css'
+import '@/theme/index.css' // 主题
 import store from '@/store/store.js'
 import i18n from '@/i18n/i18n-setup'
 import App from './App.vue'
@@ -27,5 +27,5 @@ new Vue({
 	render: h => h(App),
 	i18n,
 	store,
-	router
+	router: router
 }).$mount('#app')

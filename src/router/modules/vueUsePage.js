@@ -12,7 +12,7 @@ const vueUseIndex = () => import(/* webpackChunkName: "vueUse" */ '@/pages/vueUs
 
 export default [
 	{
-		path: '/vueUse',
+		path: 'vueUse',
 		name: 'vueUseIndex',
 		redirect: {
 			path: '/vueUse/observerUse'

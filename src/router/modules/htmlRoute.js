@@ -8,7 +8,7 @@ const domBase = () => import(/* webpackChunkName: "html" */ '@/pages/html/domBas
 
 export default [
 	{
-		path: '/html',
+		path: 'html',
 		component: htmlIndex,
 		redirect: {
 			path: '/html/domBase'
