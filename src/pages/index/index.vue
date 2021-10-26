@@ -2,19 +2,28 @@
 	<div>
 		<el-button type="primary" @click="sendSomething">主要按钮</el-button>
 		<svg-icon icon-class="home"></svg-icon>
+		<el-input v-model="tets" placeholder="" @blur="inputBlur" @change="inputOnchange"></el-input>
 		<el-button type="primary" @click="sendToGithub">github</el-button>
 	</div>
 </template>
 <script>
 import axios from 'axios'
 export default {
+	data: () => {
+		return {
+			tets: ''
+		}
+	},
 	methods: {
-		sendToGithub(){
-			axios.get('http://localhost:3011/github/rate_limit',{token:1111}).then(res=>{
-				console.log('res',res)
-			})
-
+		inputBlur() {
+			console.log(1111)
 		},
+		async inputOnchange() {
+			console.log(2222);
+			const res = await axios.get('http://localhost:3011/github/rate_limit')
+			console.log('res', res)
+		},
+		sendToGithub() {},
 		sendSomething() {
 			axios('/api/home/menu0', {
 				params: {

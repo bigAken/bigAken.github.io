@@ -5,7 +5,7 @@
 	</div>
 </template>
 <script>
-import Son from './Son'
+import Son from '@/pages/vueUsePage/listenAttrs/Son.vue'
 
 export default {
 	components: {
