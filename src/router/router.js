@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-import Home from '@/pages/home.vue'
+import Home from '@/layout/Home.vue'
 
 // 路由自动导入
 const contexts = require.context('./modules', false, /\.js$/)
