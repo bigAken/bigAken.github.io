@@ -40,7 +40,7 @@ export default {
 	},
 	methods: {
 		handleNodeClick(data) {
-			console.log('data', data)
+			// console.log('data', data)
 			if (Array.isArray(data.children)) {
 				return
 			}
