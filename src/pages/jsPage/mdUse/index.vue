@@ -5,13 +5,9 @@
 import { mdComponents } from '@/components/index.js'
 export default {
 	data() {
-		console.log('mdComponents', mdComponents)
 		return {
 			mdComponents
 		}
-	},
-	mounted() {
-		console.log('121321', this.$route)
 	}
 }
 </script>

@@ -25,6 +25,7 @@ export default {
 	},
 	computed: {
 		asideMenu() {
+			// console.log('this.$store.state.menuLis', this.$store.state.menuList)
 			const temp = this.$store.state.menuList.map(item => {
 				item.label = item.meta.title
 				if (Array.isArray(item.children) && item.children.length) {
@@ -32,6 +33,7 @@ export default {
 				}
 				return item
 			})
+			// console.log('temp', temp)
 			return temp
 		},
 		currentNodeKey() {
@@ -39,8 +41,10 @@ export default {
 		}
 	},
 	methods: {
-		handleNodeClick(data) {
-			// console.log('data', data)
+		handleNodeClick(data, node) {
+			console.log('this.$route', this.$router)
+			console.log('node', node)
+			console.log('data', data)
 			if (Array.isArray(data.children)) {
 				return
 			}
