@@ -47,6 +47,8 @@ export default {
 	justify-content: flex-start;
 	.right-content {
 		padding-left: 15px;
+		padding-top: 20px;
+		box-sizing: border-box;
 		flex-grow: 1;
 		overflow: scroll;
 	}

@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 // 自动导入组件
 const componentCtx = require.context('./', true, /\.vue$|\.md/)
-
+const mdCom = []
 // 遍历出每个组件的路径
 componentCtx.keys().forEach(fileName => {
 	// 组件实例
@@ -14,7 +14,9 @@ componentCtx.keys().forEach(fileName => {
 		component.data = function () {
 			return {}
 		}
+		mdCom.push({ component, name: reqComName })
 		component.name = reqComName
 	}
 	Vue.component(reqComName, component)
 })
+export const mdComponents = mdCom
