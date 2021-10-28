@@ -57,6 +57,6 @@ Router.prototype.push = function push(location) {
 export const menuList = getMenuList(routes[0].children)
 
 export default new Router({
-	mode: 'history',
+	mode: 'hash',
 	routes
 })
