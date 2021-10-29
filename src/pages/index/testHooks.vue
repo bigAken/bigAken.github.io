@@ -6,7 +6,7 @@ export default {
 	data() {
 		return {}
 	},
-	mounted() {
+	async	mounted() {
 		const timer = setInterval(() => {
 			console.log('11111mouted')
 		}, 1000)
@@ -14,6 +14,10 @@ export default {
 			console.log('beforeDestroy')
 			clearInterval(timer)
 		})
+		await this.$nextTick(()=>{
+			console.log(1111);
+		})
+		console.log(2222);
 	}
 }
 </script>

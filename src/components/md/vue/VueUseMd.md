@@ -1,6 +1,6 @@
 # 关于 Vue 的相关知识
 
-收集一些 vue 相关的东西
+收集简短一些 vue 相关的东西
 
 ### MVVM 的理解
 
@@ -159,6 +159,25 @@ console.log(component2.data.b) // 2
 
 顺序：父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
 
+### $nextTick()
+
+因为 $nextTick() 返回一个 Promise 对象，所以你可以使用新的 ES2017 async/await 语法完成相同的事情：
+
+```javascript
+methods: {
+  updateMessage: async function () {
+    this.message = '已更新'
+      //在这里可以看出，message并没有立刻被执行
+      //要理解页面刷新和代码执行速度的差别
+      //通常我们在页面上立刻就能看到结果，那是因为一轮队列执行其实很快，感觉不出DOM刷新的过程和所耗费的时间
+      //但对于代码的执行，属于即刻级别，DOM没更新就是没更新，就是会有问题
+    console.log(this.$el.textContent) // => '未更新'
+
+    await this.$nextTick()
+    console.log(this.$el.textContent) // => '已更新'
+  }
+}
+```
 
 ### vue 使用展示 md 文件
 
@@ -208,4 +227,64 @@ export default {
   }
 }
 </script>
+```
+
+### watch 同时执行多个方法
+
+```javascript
+watch: {
+    // 你可以传入回调数组，它们会被逐一调用
+    a: [
+      'handle1',
+      function handle2 (val, oldVal) { /* ... */ },
+      {
+        handler: function handle3 (val, oldVal) { /* ... */ },
+        /* ... */
+      }
+    ],
+  }
+```
+
+### 批量导入组件
+
+如果你恰好使用了 webpack (或在内部使用了 webpack 的 Vue CLI 3+)，那么就可以使用  require.context  方法批量导入这些组件，然后将它们注册为全局组件，这样就可以在任何地方直接使用它们了，再也不用为导入的事情烦恼了！
+
+```javascript
+import Vue from 'vue'
+import upperFirst from 'lodash/upperFirst'
+import camelCase from 'lodash/camelCase'
+
+const requireComponent = require.context(
+	// 其组件目录的相对路径
+	'./components',
+	// 是否查询其子目录
+	false,
+	// 匹配基础组件文件名的正则表达式
+	/Base[A-Z]\w+\.(vue|js)$/
+)
+
+requireComponent.keys().forEach(fileName => {
+	// 获取组件的配置，也就是具体内容，具体定义，组件的本身代码
+	const componentConfig = requireComponent(fileName)
+
+	// 获取组件的 PascalCase 命名，用来规范化组件名
+	const componentName = upperFirst(
+		camelCase(
+			// 获取和目录深度无关的文件名
+			fileName
+				.split('/')
+				.pop()
+				.replace(/\.\w+$/, '')
+		)
+	)
+
+	// 全局注册组件
+	Vue.component(
+		componentName,
+		// 如果这个组件选项是通过 `export default` 导出的，
+		// 那么就会优先使用 `.default`，
+		// 否则回退到使用模块的根。
+		componentConfig.default || componentConfig
+	)
+})
 ```

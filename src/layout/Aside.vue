@@ -41,15 +41,11 @@ export default {
 		}
 	},
 	methods: {
-		handleNodeClick(data, node) {
-			console.log('this.$route', this.$router)
-			console.log('node', node)
-			console.log('data', data)
+		handleNodeClick(data) {
 			if (Array.isArray(data.children)) {
 				return
 			}
 			const path = data.fullPath || data.path
-			console.log('path', path)
 			this.$router.push({ path: path.startsWith('/') ? path : `/${path}` })
 		}
 	}
