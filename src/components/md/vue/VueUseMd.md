@@ -114,7 +114,7 @@ console.log(component2.data.b) // 3
 
 通过上面代码可以得知实例化的 component1 和 component2 确是共享同样的 data 对象，所以当你修改 component1 的 data 中的一个属性的时候，component2 中的 data 也会发生改变，这明显不是我们想要的效果。
 
-> 这跟 vue 组件复用，并且里面 data 是独立得相违背 当我们的 data 是一个函数的时候，每一个实例的 data 属性都是独立的，不会相互影响了。于是把data改成function
+> 这跟 vue 组件复用，并且里面 data 是独立得相违背 当我们的 data 是一个函数的时候，每一个实例的 data 属性都是独立的，不会相互影响了。于是把 data 改成 function
 
 ```javascript
 class Component {}
@@ -133,6 +133,32 @@ component1.data.b = 3
 console.log(component1.data.b) // 3
 console.log(component2.data.b) // 2
 ```
+
+### Vue 父组件和子组件生命周期执行顺序
+
+#### 加载渲染过程
+
+父先创建，才能有子；子创建完成，父才完整。
+顺序：父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 子 beforeMount -> 子 mounted -> 父 mounted
+
+#### 子组件更新过程
+
+- 子组件更新 影响到 父组件的情况。
+  顺序：父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+- 子组件更新 不影响到 父组件的情况。
+  顺序：子 beforeUpdate -> 子 updated
+
+#### 父组件更新过程
+
+- 父组件更新 影响到 子组件的情况。
+  顺序：父 beforeUpdate -> 子 beforeUpdate -> 子 updated -> 父 updated
+- 父组件更新 不影响到 子组件的情况
+  顺序：父 beforeUpdate -> 父 updated
+
+#### 销毁过程
+
+顺序：父 beforeDestroy -> 子 beforeDestroy -> 子 destroyed -> 父 destroyed
+
 
 ### vue 使用展示 md 文件
 

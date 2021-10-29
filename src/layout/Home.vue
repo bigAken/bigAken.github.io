@@ -46,6 +46,7 @@ export default {
 	display: flex;
 	justify-content: flex-start;
 	.right-content {
+		height: 100vh;
 		padding-left: 15px;
 		padding-top: 20px;
 		box-sizing: border-box;

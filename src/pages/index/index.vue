@@ -4,22 +4,28 @@
 		<svg-icon icon-class="home"></svg-icon>
 		<el-input v-model="tets" placeholder="" @blur="inputBlur" @change="inputOnchange"></el-input>
 		<el-button type="primary" @click="sendToGithub">github</el-button>
+		<testHooks @hook:mounted="doSomething"></testHooks>
 	</div>
 </template>
 <script>
 import axios from 'axios'
+import testHooks from './testHooks'
 export default {
 	data: () => {
 		return {
 			tets: ''
 		}
 	},
+	components: { testHooks },
 	methods: {
+		doSomething(){
+			console.log('mouted');
+		},
 		inputBlur() {
 			console.log(1111)
 		},
 		async inputOnchange() {
-			console.log(2222);
+			console.log(2222)
 			const res = await axios.get('http://localhost:3011/github/rate_limit')
 			console.log('res', res)
 		},
