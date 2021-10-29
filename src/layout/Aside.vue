@@ -3,11 +3,13 @@
 		<div class="top-user"></div>
 		<div class="catalog">
 			<el-tree
+				ref="leftTree"
 				:data="asideMenu"
 				node-key="fullPath"
 				highlight-current
 				:props="defaultProps"
 				:current-node-key="currentNodeKey"
+				:default-expanded-keys="[currentNodeKey]"
 				@node-click="handleNodeClick"
 			></el-tree>
 		</div>
@@ -33,7 +35,7 @@ export default {
 				}
 				return item
 			})
-			// console.log('temp', temp)
+			console.log('temp', temp)
 			return temp
 		},
 		currentNodeKey() {
@@ -41,24 +43,33 @@ export default {
 		}
 	},
 	methods: {
-		handleNodeClick(data) {
+		handleNodeClick(data, node) {
+			console.log('node', node)
 			if (Array.isArray(data.children)) {
 				return
 			}
 			const path = data.fullPath || data.path
 			this.$router.push({ path: path.startsWith('/') ? path : `/${path}` })
 		}
+	},
+	mounted() {
+		console.log('this.currentNodeKey', this.currentNodeKey)
+		this.$nextTick(() => {
+			this.$refs.leftTree.setCurrentKey(this.currentNodeKey)
+		})
 	}
 }
 </script>
 <style lang="scss" scoped>
 .aside-container {
-	width: 150px;
+	min-width: 150px;
+	max-width: 300px;
 	height: 100vh;
 	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
 	border-right: 1px solid #e0e0e0;
+	transition: all 0.5s;
 	.top-user {
 		flex-shrink: 0;
 		width: 40px;
