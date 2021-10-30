@@ -11,13 +11,10 @@ on:
 inputs:
   reponame:
     description: 'Your reponame'
-    default: bigAken.github.io
+    default: "bigAken.github.io"
   username:
     description: 'Your username'
-    default: bigAken
-  token:
-    description: 'Your Github token'
-    default: ${{ secrets.GITHUB_TOKEN }}
+    default: "bigAken"
 jobs:
   build_vue:
     runs-on: ubuntu-latest
