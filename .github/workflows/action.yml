@@ -15,6 +15,7 @@ inputs:
   username:
     description: 'Your username'
     default: "bigAken"
+    
 jobs:
   build_vue:
     runs-on: ubuntu-latest
