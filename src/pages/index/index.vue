@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="atuo-deploy">
 		<el-button type="primary" @click="sendSomething">主要按钮</el-button>
 		<svg-icon icon-class="home"></svg-icon>
 		<el-input v-model="tets" placeholder="" @blur="inputBlur" @change="inputOnchange"></el-input>
