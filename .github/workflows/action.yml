@@ -20,4 +20,4 @@ jobs:
         with:
           username: 'bigAken'
           reponame: 'bigAken.github.io'
-          token: ${{ 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 }} # Leave this line unchanged
+          token: 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 # Leave this line unchanged
