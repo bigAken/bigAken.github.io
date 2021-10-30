@@ -15,6 +15,7 @@ jobs:
     name: Build Vue
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/javascript-action@172239021f7ba04fe7327647b213799853a9eb89
       - name: Build Vue
         run: |
           npm ci; 
