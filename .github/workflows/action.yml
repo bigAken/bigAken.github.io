@@ -21,8 +21,8 @@ jobs:
           npm run build; 
           cd dist
           ln -s index.html 404.html
-          git config --global user.email "827094438@qq.com"
-          git config --global user.name "bigAken"
+          git config --global user.email 827094438@qq.com
+          git config --global user.name bigAken
           git init
           git add -A
           git commit -m '发版'
