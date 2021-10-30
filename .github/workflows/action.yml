@@ -6,15 +6,6 @@ name: CI
 on:
   push:
     branches: [master]
-
-inputs:
-  reponame:
-    description: 'Your reponame'
-    default: "bigAken.github.io"
-  username:
-    description: 'Your username'
-    default: "bigAken"
-
 jobs:
   build_vue:
     runs-on: ubuntu-latest
