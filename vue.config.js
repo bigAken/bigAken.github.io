@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
 	publicPath: '/bigAken.github.io/',
-	outputDir: 'docs',
+	outputDir: 'dist',
 	assetsDir: './',
 	productionSourceMap: false,
 	// https://github.com/qingwei-li/vue-markdown-loader/issues/61
