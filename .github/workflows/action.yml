@@ -16,6 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Vue
+        with:
+          username: 'bigAken'
+          reponame: 'bigAken.github.io'
+          token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm ci; 
           npm run build; 
@@ -30,7 +34,3 @@ jobs:
         shell: bash
         env:
           CI: true
-        with:
-          username: 'bigAken'
-          reponame: 'bigAken.github.io'
-          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
