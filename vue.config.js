@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-	publicPath: '/bigAken.github.io/',
+	publicPath: '/',
 	outputDir: 'dist',
 	assetsDir: './',
 	productionSourceMap: false,
