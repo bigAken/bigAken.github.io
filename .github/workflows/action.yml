@@ -15,9 +15,16 @@ jobs:
     name: Build Vue
     steps:
       - uses: actions/checkout@v2
-      - id: Build-Vue
-        uses: xRealNeon/VuePagesAction@1.0.1
-        with:
-          username: 'bigAken'
-          reponame: 'bigAken.github.io'
-          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+      - name: Build Vue
+        run: |
+              npm ci; fi
+              npm run build; fi
+              cd dist
+              ln -s index.html 404.html
+              git config --global user.email "827094438@qq.com"
+              git config --global user.name "bigAken"
+              git init
+              git add -A
+              git commit -m '发版'
+              git push -f git@github.com:bigAken/bigAken.github.io.git master:gh-pages
+        shell: bash
