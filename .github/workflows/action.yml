@@ -30,3 +30,7 @@ jobs:
         shell: bash
         env:
           CI: true
+        with:
+          username: 'bigAken'
+          reponame: 'bigAken.github.io'
+          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
