@@ -8,7 +8,16 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-
+inputs:
+  reponame:
+    description: 'Your reponame'
+    default: bigAken.github.io
+  username:
+    description: 'Your username'
+    default: bigAken
+  token:
+    description: 'Your Github token'
+    default: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   build_vue:
     runs-on: ubuntu-latest
@@ -21,8 +30,8 @@ jobs:
           npm run build; 
           cd dist
           ln -s index.html 404.html
-          git config --global user.email 827094438@qq.com
-          git config --global user.name bigAken
+          git config --global user.email "${{ inputs.gitemail }}"
+          git config --global user.name "${{ inputs.gitname }}"
           git init
           git add -A
           git commit -m '发版'
