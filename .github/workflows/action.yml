@@ -15,7 +15,6 @@ jobs:
     name: Build Vue
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/javascript-action@AAAAB3NzaC1yc2EAAAADAQABAAABAQCi2tVLGZ9M6lG8D9tttU4W/aOkNieRT8zH+pCYAetR7UO32qJ0lVvBPrXtbjY9M3D704/R6kbyR5yJaThs/6QZk4AvO00BVKMsOdqLvdp9dP4b6LnNtIlmeB/OAxRIKt7SEynFImHedcDhQsfj6BkAKH3m/IRywJ8hnc0RLEeBSWys5pnVe5bGB2At53w2OWP7lmjzwMtbdaSNBH3vNqlmf7vKPgPUDNA7jZFF1Mp4DbcITGomDRC2yDXpeTZHHTGiX6BDXD+w8CWH+bRVkrXERlY4tM3lAWJf0G1ocBxad1I2dx5dRFVOl4X01mC0YpF3BnM9WSs84tDyZ1uwmG/r 827094438@qq.com
       - name: Build Vue
         run: |
           npm ci; 
@@ -29,3 +28,5 @@ jobs:
           git commit -m '发版'
           git push -f git@github.com:bigAken/bigAken.github.io.git master:gh-pages
         shell: bash
+        env:
+          CI: true
