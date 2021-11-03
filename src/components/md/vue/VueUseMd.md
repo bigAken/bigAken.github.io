@@ -288,3 +288,19 @@ requireComponent.keys().forEach(fileName => {
 	)
 })
 ```
+
+### vue 相当于 v-model 的修饰符.sync
+下面是elementUI的示例，内部组件可以该表
+```Html
+<el-dialog
+  title="提示"
+  :visible.sync="dialogVisible"
+  width="30%"
+  :before-close="handleClose">
+  <span>这是一段信息</span>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+  </span>
+</el-dialog>
+```
