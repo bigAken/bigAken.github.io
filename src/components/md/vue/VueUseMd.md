@@ -2,6 +2,7 @@
 
 收集简短一些 vue 相关的东西
 [![Juejin](https://img.shields.io/badge/参考掘金-花哨-blue)](https://juejin.cn/post/7023197006998978597#heading-64)
+[![图标](https://img.shields.io/badge/图标-生成-yellow)](https://shields.io)
 
 ### MVVM 的理解
 
