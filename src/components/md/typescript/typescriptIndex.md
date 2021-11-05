@@ -1,5 +1,5 @@
 ### TypeScript 入门以及进阶
-
+[原文](https://mp.weixin.qq.com/s/Mx8kirBth0vSXf-rzxu2eQ)
 #### 函数定义
 
 ```ts
