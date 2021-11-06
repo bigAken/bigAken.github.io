@@ -25,5 +25,6 @@ nginx 默认的端口是 80 端口，修改端口可在 conf\nginx.conf 中修�
             index  index.html index.htm;
         }
 ```
-在nginx目录下的html目录下面，删除改目录下的html文件。添加自己的html文件
-或者修改root 的为打包好的文件路径
+
+在 nginx 目录下的 html 目录下面，删除改目录下的 html 文件。添加自己的 html 文件
+或者修改 root 的为打包好的文件路径
