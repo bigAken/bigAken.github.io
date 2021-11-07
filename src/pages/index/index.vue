@@ -19,8 +19,8 @@ export default {
 	},
 	components: { testHooks },
 	methods: {
-		doSomething(){
-			console.log('mouted');
+		doSomething() {
+			console.log('mouted')
 		},
 		inputBlur() {
 			console.log(1111)
@@ -47,6 +47,17 @@ export default {
 					console.log('写入失败！')
 				})
 		}
+	},
+	async mounted() {
+		setTimeout(() => {
+			console.log('33333')
+			axios.get('https://api.github.com/rate_limit').then(res => {
+				console.log('res', res)
+			})
+		}, 200)
+		setTimeout(() => {
+			console.log('22222')
+		}, 200)
 	}
 }
 </script>

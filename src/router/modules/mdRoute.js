@@ -77,36 +77,3 @@ export default [
 	}
 ]
 
-function test1() {
-	var p = new Promise(function (resolve, reject) {
-		setTimeout(function () {
-			if (window) {
-				resolve({ status: 200, data: 1 })
-			} else {
-				reject({
-					status: 500,
-					data: null
-				})
-			}
-		}, 1000)
-	})
-	return p
-}
-function test2() {
-	var p = new Promise(function (resolve, reject) {
-		setTimeout(function () {
-			if (window) {
-				resolve({ status: 200, data: 1 })
-			} else {
-				reject({
-					status: 500,
-					data: null
-				})
-			}
-		}, 1000)
-	})
-	return p
-}
-Promise.all([test1(), test2()]).then(function (results) {
-	console.log('results', results)
-})
