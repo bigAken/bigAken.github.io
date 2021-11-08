@@ -1,6 +1,8 @@
 # 关于 Vue 的相关知识
 
 收集简短一些 vue 相关的东西
+[![Juejin](https://img.shields.io/badge/参考掘金-花哨-blue)](https://juejin.cn/post/7023197006998978597#heading-64)
+[![图标](https://img.shields.io/badge/图标-生成-yellow)](https://shields.io)
 
 ### MVVM 的理解
 
@@ -91,6 +93,19 @@ export default {
 }
 </script>
 ```
+
+### Vue.directive 有写过么，应用场景有哪些？
+
+Vue.directive 可以注册全局指令和局部指令。
+
+指令定义函数提供如下钩子函数
+
+- bind：指令第一次绑定到元素时调用（只调用一次）
+- inserted: 被绑定元素插入父节点时使用（父节点存在即可调用）
+- update：被绑定元素所在模板更新时调用，不论绑定值是否变化。通过比较更新前后的绑定值。
+- componentUpdated: 被绑定元素所在模板完成一次更新周期时调用。
+- unbind: 只调用一次，指令与元素解绑时调用。
+  我项目中有涉及 一键 copy、权限控制 都可以用指令的方式控制，目的就是简化我们的工作量
 
 ### 组件中的 data 为什么是个函数
 
@@ -288,3 +303,115 @@ requireComponent.keys().forEach(fileName => {
 	)
 })
 ```
+
+### vue 相当于 v-model 的修饰符.sync
+
+下面是 elementUI 的示例，内部组件可以该表
+
+```Html
+<el-dialog
+  title="提示"
+  :visible.sync="dialogVisible"
+  width="30%"
+  :before-close="handleClose">
+  <span>这是一段信息</span>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+  </span>
+</el-dialog>
+```
+
+### 关于 mixin 的理解，有什么应用场景
+
+> 定义：mixin（混入），提供了一种非常灵活的方式，来分发 Vue 组件中可复用的功能
+
+mixin 混入分全局混入和局部混入，本质是 JS 对象，如 data、components、computed、methods 等。
+
+全局混入不推荐使用，会影响后续每个 Vue 实例的创建。局部混入可提取组件间相同的代码，进行逻辑复用。
+
+适用场景：如多个页面具备相同的悬浮定位浮窗，可尝试用 mixin 封装。
+
+```js
+// customFloatDialog.js
+export const customFloatDialog = {
+  data() {
+    return {
+      visible: false
+    }
+  },
+  methods: {
+    toggleShow() {
+      this.visible = !this.visible
+    }
+  }
+}
+</script>
+
+//需要引入的组件
+<template>
+  <div></div>
+</template>
+<script>
+import { customFloatDialog } from './customFloatDialog.js'
+export default {
+  mixins: [customFloatDialog],
+}
+</script>
+```
+
+### Vue 组件间通讯方式
+
+#### 父子组件通讯
+
+- props 与 $emit
+- \$parent 与 \$children
+
+#### 隔代组件通讯
+
+- \$attrs 与 \$listeners
+- provide 和 inject
+
+#### 父子、兄弟、隔代组件通讯
+
+- EventBus
+- observal
+- Vuex
+
+### 常用的修饰符
+
+#### 表单修饰符
+
+- lazy: 失去焦点后同步信息
+- trim: 自动过滤首尾空格
+- number: 输入值转为数值类型
+- native：绑定一个原生的事件
+
+#### 事件修饰符
+
+- stop：阻止冒泡
+- prevent：阻止默认行为
+- self：仅绑定元素自身触发
+- once：只触发一次
+
+#### 鼠标按钮修饰符
+
+- left：鼠标左键
+- right：鼠标右键
+- middle：鼠标中间键
+
+### Vue 性能优化
+
+- 非响应式数据通过 Object.freeze 冻结数据
+- 嵌套层级不要过深
+- computed 和 watch 区别使用
+- v-if 和 v-show 区别使用
+- v-for 避免和 v-if 一起使用，且绑定 key 值要唯一
+- 列表数据过多采用分页或者虚拟列表
+- 组件销毁后清除定时器和事件
+- 图片懒加载
+- 路由懒加载
+- 防抖、节流
+- 按需引入外部库
+- keep-alive 缓存使用
+- 服务端渲染和预渲染
