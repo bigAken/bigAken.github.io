@@ -40,6 +40,7 @@ const routes = [
 
 function getMenuList(routes, parent = { fullPath: '', path: '' }) {
 	const tempMenu = routes.map(item => {
+		console.log('item',item);
 		item.fullPath = `${parent.fullPath || parent.path}${item.path.includes('/') ? '' : '/'}${item.path}`
 		if (Array.isArray(item['children']) && item['children'].length > 0) {
 			item['children'] = getMenuList(item['children'], item)

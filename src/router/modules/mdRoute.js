@@ -4,26 +4,27 @@ const childRoutes = mdComponents.map(item => {
 	return {
 		...item,
 		path: item.name,
-		label: item.name,
+		label: item.title,
 		meta: {
-			title: item.name
+			title: item.title
 		}
 	}
 })
 const vueMdRoutes = childRoutes.filter(item => {
-	return /^(vue)/i.test(item.name)
+	return /^(vue)/i.test(item.fileName)
 })
 const jsMdRoutes = childRoutes.filter(item => {
-	return /^(javascript)/i.test(item.name)
+	return /^(javascript)/i.test(item.fileName)
 })
 const cssMdRoutes = childRoutes.filter(item => {
-	return /^(css)/i.test(item.name)
+	return /^(css)/i.test(item.fileName)
 })
 const reactMdRoutes = childRoutes.filter(item => {
-	return /^(react)/i.test(item.name)
+	return /^(react)/i.test(item.fileName)
 })
+console.log('reactMdRoutes',reactMdRoutes);
 const otherMdRoutes = childRoutes.filter(item => {
-	return /^(other)/i.test(item.name)
+	return /^(other)/i.test(item.fileName)
 })
 export default [
 	{
