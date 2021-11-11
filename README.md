@@ -98,8 +98,11 @@
 	}
 }
 ```
+
 ### component
-  mdcomponent命名：所在文件夹名字+真实名字.md
+
+mdcomponent 命名：所在文件夹名字*路由名称*真实名字.md
+
 ### vue 相关
 
 - 组件名称：必须以大写字母开头驼峰法命名。
@@ -272,5 +275,3 @@ const promiseToUse = () => import(/* webpackChunkName: "jsRoute" */ '@/pages/jsP
   - revert：回滚到上一个版本；
 - scope：【可选】用于说明 commit 的影响范围
 - subject：commit 的简要说明，尽量简短
-
-

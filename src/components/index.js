@@ -9,14 +9,17 @@ componentCtx.keys().forEach(fileName => {
 	const component = componentCtx(fileName).default || componentCtx(fileName)
 	// 截取路径作为组件名
 	const reqComName = fileName.replace(/(.*\/)*([^.]+).*/gi, '$2')
+	const temp = reqComName.split('_')
+
 	// md组件需要绑定一个data
 	if (/\.md$/.test(fileName)) {
 		component.data = function () {
 			return {}
 		}
-		mdCom.push({ component, name: reqComName })
-		component.name = reqComName
+		mdCom.push({ component, name: temp[1] || temp[0], title: temp[2] || temp[0], fileName: reqComName, path: temp[1] || temp[0], })
+		component.name = temp[1]
+		component.path = temp[1]
 	}
-	Vue.component(reqComName, component)
+	Vue.component(temp[1] || temp[0], component)
 })
 export const mdComponents = mdCom
