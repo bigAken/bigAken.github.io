@@ -1,6 +1,16 @@
-/**
- * md文件标题
- */
+import cssNameConfig from './cssNameConfig';
+import javascriptNameConfig from './javascriptNameConfig';
+import otherNameConfig from './otherNameConfig';
+import reactNameConfig from './reactNameConfig';
+import typescriptNameConfig from './typescriptNameConfig';
+import vueNamecConfig from './vueNamecConfig';
+
+
 export default {
-  asyncImg: '异步加载图片'
+  ...cssNameConfig,
+  ...javascriptNameConfig,
+  ...otherNameConfig,
+  ...reactNameConfig,
+  ...typescriptNameConfig,
+  ...vueNamecConfig
 }

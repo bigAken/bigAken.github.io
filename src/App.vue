@@ -1,12 +1,22 @@
 <template>
 	<router-view></router-view>
 </template>
-
 <script>
 export default {
 	name: 'App',
 	components: {},
-	methods: {}
+	methods: {},
+	data() {
+		return {
+			id: 'test',
+			obj: {
+				[this.id]: null
+			}
+		}
+	},
+	mounted() {
+		console.log(this.obj)
+	}
 }
 </script>
 

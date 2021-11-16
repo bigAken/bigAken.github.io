@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import mdConfigName from '../plugins/mdConfigName/index'
 
 // 自动导入组件
 const componentCtx = require.context('./', true, /\.vue$|\.md/)
@@ -16,7 +17,7 @@ componentCtx.keys().forEach(fileName => {
 		component.data = function () {
 			return {}
 		}
-		mdCom.push({ component, name: temp[1] || temp[0], title: temp[2] || temp[0], fileName: reqComName, path: temp[1] || temp[0], })
+		mdCom.push({ component, name: temp[1] || temp[0], title: mdConfigName[temp[1]] || temp[2] || temp[0], fileName: reqComName, path: temp[1] || temp[0], })
 		component.name = temp[1]
 		component.path = temp[1]
 	}
