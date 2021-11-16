@@ -26,11 +26,11 @@ Visual Studio Code 的 JavaScript 支持可以在两种不同的模式下运行�
 
 我们通过创建 jsconfig.json 文件将我们代码的这一部分（我们网站的客户端）定义为 JavaScript 项目。 将文件放在 JavaScript 代码的根目录下，如下所示。
 
-![jsconfig setup](../image/59074-a893d0458a810472.webp)
+![jsconfig setup](./image/59074-a893d0458a810472.webp)
 
 在更复杂的项目中，您可能在工作空间中定义了多个 jsconfig.json 文件。 您将需要执行此操作，以便不将一个项目中的代码建议为 IntelliSense 以在另一个项目中进行编码。 下面的插图是一个带有客户端和服务器文件夹的项目，显示了两个单独的 JavaScript 项目。
 
-![jsconfig setup](../image/59074-2c1c32bf978a8928.webp)
+![jsconfig setup](./image/59074-2c1c32bf978a8928.webp)
 
 #### 例子
 

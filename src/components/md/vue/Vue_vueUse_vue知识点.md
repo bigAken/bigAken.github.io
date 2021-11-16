@@ -7,7 +7,7 @@
 ### MVVM 的理解
 
 MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据层，可定义修改数据、编写业务逻辑。View 代表视图层，负责将数据渲染成页面。ViewModel 负责监听数据层数据变化，控制视图层行为交互，简单讲，就是同步数据层和视图层的对象。ViewModel 通过双向绑定把 View 和 Model 层连接起来，且同步工作无需人为干涉，使开发人员只关注业务逻辑，无需频繁操作 DOM，不需关注数据状态的同步问题。
-![](image/VueUseMd/1635473838853.png)
+![](./image/1635473838853.png)
 
 ### 如何实现 v-model
 
