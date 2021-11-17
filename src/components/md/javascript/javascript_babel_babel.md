@@ -781,6 +781,7 @@ npm package 名称的变化 (重点)
 
 参考链接
 
+[龙恩0707 深入浅出的webpack构建工具---babel之配置文件.babelrc](https://www.cnblogs.com/tugenhua0707/p/9452471.html)
 [babel 文档](https://www.babeljs.cn/docs/)
 
 [babel 7 的使用的个人理解](https://www.jianshu.com/p/cbd48919a0cc)
