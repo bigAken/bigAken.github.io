@@ -1,3 +1,3 @@
 export default {
-  babel: 'babel 入门以及进阶'
+  useFile: '在web应用程序中使用文件'
 }
