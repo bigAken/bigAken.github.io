@@ -134,70 +134,103 @@ module.exports = {
 
 然后 yarn run postcss,可以看到根目录下有个 demo.css 这个就是 postCss 编译得到的文件
 
-### 在webpack配置
-```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
-          },
-        ],
-      },
-    ],
-  },
-};
-```
-发散思考使用sass，less是否可以在less-loader或者sass-loader处理后配置postCss？如下有待进一步验证
+### 在 webpack 配置
 
 ```js
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          // 将 JS 字符串生成为 style 节点
-          'style-loader',
-          // 将 CSS 转化成 CommonJS 模块
-          'css-loader',
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
-          },
-          // 将 Sass 编译成 CSS
-          'sass-loader',
-        ],
-      },
-    ],
-  },
-};
+	module: {
+		rules: [
+			{
+				test: /\.css$/i,
+				use: [
+					'style-loader',
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									[
+										'postcss-preset-env',
+										{
+											// Options
+										}
+									]
+								]
+							}
+						}
+					}
+				]
+			}
+		]
+	}
+}
+```
+
+发散思考使用 sass，less 是否可以在 less-loader 或者 sass-loader 处理后配置 postCss？如下有待进一步验证
+
+```js
+module.exports = {
+	module: {
+		rules: [
+			{
+				test: /\.s[ac]ss$/i,
+				use: [
+					// 将 JS 字符串生成为 style 节点
+					'style-loader',
+					// 将 CSS 转化成 CommonJS 模块
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									[
+										'postcss-preset-env',
+										{
+											// Options
+										}
+									]
+								]
+							}
+						}
+					},
+					// 将 Sass 编译成 CSS
+					'sass-loader'
+				]
+			}
+		]
+	}
+}
+```
+
+## css 兼容
+
+注意要配合根目录下面`.browserslistrc`处理
+
+![css兼容](./image/05100516778-1469026681.png)
+在 这里 display:flex 需要兼容性处理，webpack 编译打包时，需要使用 postcss-loader 这个 loader 和 postcss-preset-env 这个插件，它帮 postcss 找到 package.json 中 browserslist 里面的配置，通过配置加载指定的 css 兼容性样式
+
+首先，下载安装 `npm install --save-dev postcss-loader postcss-preset-env`
+
+webpack.config.js 配置：
+
+```js
+{
+	test: /\.css$/,
+	use: [
+		MiniCssExtractPlugin.loader, //这个loader取代style-loader,将css从js中提取出来
+		'css-loader',
+		{
+			loader: 'postcss-loader', //css兼容性处理,修改loader的配置,使用默认配置的话直接 postcss-loader
+			options: {
+				ident: 'postcss',
+				plugins: () => [
+					require('postcss-preset-env')() //postcss的插件
+				]
+			}
+		}
+	]
+}
+
 ```
