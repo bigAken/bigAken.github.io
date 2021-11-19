@@ -133,3 +133,71 @@ module.exports = {
 ```
 
 然后 yarn run postcss,可以看到根目录下有个 demo.css 这个就是 postCss 编译得到的文件
+
+### 在webpack配置
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
+```
+发散思考使用sass，less是否可以在less-loader或者sass-loader处理后配置postCss？如下有待进一步验证
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // 将 JS 字符串生成为 style 节点
+          'style-loader',
+          // 将 CSS 转化成 CommonJS 模块
+          'css-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      // Options
+                    },
+                  ],
+                ],
+              },
+            },
+          },
+          // 将 Sass 编译成 CSS
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+};
+```
