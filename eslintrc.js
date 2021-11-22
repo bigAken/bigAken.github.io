@@ -24,8 +24,8 @@ module.exports = {
     "vue"
   ],
   rules: {
-  /*这里是eslint规则*/
-  //3.添加global-require
- "global-require": 0//这里应该0代表off
+    /*这里是eslint规则*/
+    //3.添加global-require
+    "global-require": 0//这里应该0代表off
   }
 }
