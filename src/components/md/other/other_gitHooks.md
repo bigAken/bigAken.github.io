@@ -286,7 +286,7 @@ git commit -m 'feat: test'
 **生成符合规范的 commit message**
 
 本地安装并没有全局安装，当然可以全局安装具体查看[官方文档](https://github.com/commitizen/cz-cli)，全局安装可以使用`git cz`，
-`cz-commitlint`打通 `commitizen` 和`commitlint`配置
+`cz-commitlint`打通 `commitizen` 和[`commitlint`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/cz-commitlint)配置
 
 ```bash
 npm install --save-dev @commitlint/cz-commitlint commitizen
