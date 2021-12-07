@@ -1,0 +1,15 @@
+#!/bin/sh
+mkdir profile
+cp README.md ./profile/README.md
+cd profile
+git init
+git config  user.email "827094438@qq.com"
+git config  user.name "bigAken"
+ls
+git add .
+git commit -m '发版'
+git remote add origin git@github.com:bigAken/bigAken.git
+git pull origin master
+ls
+git push -u origin master
+rm -f profile
