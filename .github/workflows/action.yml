@@ -19,6 +19,8 @@ jobs:
           yarn install; 
           npm ls node-sass;
           npm run build; 
+          npm install -g node-gyp;
+          npm install –global –production windows-build-tools;
           cd dist
           ln -s index.html 404.html
           git config --global user.email "827094438@qq.com"
