@@ -22,7 +22,7 @@ jobs:
           git init
           git add README.md
           git commit -m '发版'
-          git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken master:master
+          git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken main:master
         shell: bash
         env:
           CI: true
