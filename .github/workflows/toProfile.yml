@@ -19,6 +19,9 @@ jobs:
           cp README.md ./profile/README.md
           ls
           cd profile
+          ls
+          git config --global user.email "827094438@qq.com"
+          git config --global user.name "bigAken"
           git init
           git add README.md
           git commit -m '发版'
