@@ -1,4 +1,5 @@
 #!/bin/sh
+rm -rf profile 
 mkdir profile
 cp README.md ./profile/README.md
 cd profile
