@@ -16,7 +16,7 @@ jobs:
           git config --global user.name "bigAken"
           mkdir profile 
           ls
-          cp README.md /profile/README.md
+          cp README.md ./profile/README.md
           ls
           cd profile
           git init
