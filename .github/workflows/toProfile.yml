@@ -21,8 +21,7 @@ jobs:
           git config  user.name "bigAken"
           git add .
           git commit -m '发版'
-          git config --global init.defaultBranch master
-          git branch -M main
+          git config user.password "djq12270315"
           git remote add origin git@github.com:bigAken/bigAken.git
           echo ${{ secrets.GITHUB_TOKEN }}
           git pull --rebase origin master
