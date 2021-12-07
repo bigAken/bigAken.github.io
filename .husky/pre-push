@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "start profile---------"
 rm -rf profile 
 mkdir profile
 cp README.md ./profile/README.md
@@ -12,8 +13,6 @@ git commit -m '发版'
 git remote add origin git@github.com:bigAken/bigAken.git
 ls
 ls
-ls
-ls
 git pull origin --rebase
 git push -f origin master
 echo "success"
@@ -23,3 +22,4 @@ echo "success"
 echo "success"
 echo "success"
 rm -rf profile 
+echo "end profile--------"
