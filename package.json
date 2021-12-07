@@ -8,7 +8,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "hot": "node server index.js",
-    "test": "node server /server/github.js"
+    "test": "node server /server/github.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -37,14 +38,15 @@
     "element-theme-chalk": "^2.15.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.4",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
+    "node-sass": "^5.0.0",
     "prettier": "2.2.1",
     "sass-loader": "^10.1.1",
     "svg-sprite-loader": "^5.2.1",
-    "vue-template-compiler": "^2.6.12",
-    "node-sass": "^5.0.0",
-    "vue-loader": "^15.9.6"
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

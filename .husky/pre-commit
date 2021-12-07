@@ -1,0 +1,10 @@
+#!/bin/sh
+mkdir profile
+cp README.md ./profile/README.md
+ls
+git add .
+git commit -m '发版'
+git remote add origin git@github.com:bigAken/bigAken.git
+git pull --rebase origin master
+ls
+git push -u origin master
