@@ -18,5 +18,6 @@ echo "success"
 echo "success"
 echo "success"
 echo "success"
+cd ..
 rm -rf profile 
 echo "end profile--------"

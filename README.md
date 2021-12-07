@@ -1,7 +1,6 @@
 <div align=center>
 
 <img alt="bigAken" src="./avatar.png" width=100 />
-3333333444444
 
 # Hi, bigAken :wave:
 
