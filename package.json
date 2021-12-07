@@ -3,9 +3,6 @@
 	"version": "0.1.0",
 	"private": true,
 	"homepage": "https://bigAken.github.io/bigaken",
-	"engines": {
-		"node": "14.17.0"
-	},
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
@@ -24,6 +21,7 @@
 		"koa2-proxy-middleware": "0.0.4",
 		"vue": "^2.6.11",
 		"vue-i18n": "^8.22.4",
+		"vue-loader-v16": "^16.0.0-beta.5.4",
 		"vue-markdown-loader": "^2.4.1",
 		"vue-router": "^3.4.9",
 		"vuex": "^3.6.0"
