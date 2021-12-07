@@ -1,0 +1,19 @@
+# 发版到Github个人简介仓库
+name: dist
+on:
+  push:
+    branches: [master]
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Vue
+        run: |
+          git add README.md
+          git commit -m '发版'
+          git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken master:master
+        shell: bash
+        env:
+          CI: true
