@@ -11,6 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build Vue
         run: |
+          git config --global user.email "827094438@qq.com"
+          git config --global user.name "bigAken"
+          git init
           git add README.md
           git commit -m '发版'
           git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken master:master

@@ -4,7 +4,6 @@
 
 # Hi, bigAken :wave:
 
-
 ## Introduction :raised_hands:
 
 Major in Software Engineering. :man_technologist:
