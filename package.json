@@ -21,7 +21,6 @@
 		"koa2-proxy-middleware": "0.0.4",
 		"vue": "^2.6.11",
 		"vue-i18n": "^8.22.4",
-		"vue-loader-v16": "^16.0.0-beta.5.4",
 		"vue-markdown-loader": "^2.4.1",
 		"vue-router": "^3.4.9",
 		"vuex": "^3.6.0"
@@ -44,7 +43,7 @@
 		"prettier": "2.2.1",
 		"sass-loader": "^10.1.1",
 		"svg-sprite-loader": "^5.2.1",
-		"vue-loader": "^16.8.2",
+		"vue-loader": "15.9.8",
 		"vue-template-compiler": "^2.6.12"
 	},
 	"eslintConfig": {

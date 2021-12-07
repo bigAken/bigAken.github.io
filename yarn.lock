@@ -10959,10 +10959,10 @@ vue-i18n@^8.22.4:
   resolved "https://registry.npmmirror.com/vue-i18n/download/vue-i18n-8.26.7.tgz#adfd48373449fe31438c48e3b3bd43044dc3a681"
   integrity sha1-rf1INzRJ/jFDjEjjs71DBE3DpoE=
 
-vue-loader-v16@^16.0.0-beta.5.4:
-  version "16.0.0-beta.5.4"
-  resolved "https://registry.nlark.com/vue-loader-v16/download/vue-loader-v16-16.0.0-beta.5.4.tgz#8fbcf87dc69c9979ecd777adba4e8a0e7fd95a7e"
-  integrity sha1-j7z4fcacmXns13etuk6KDn/ZWn4=
+vue-loader-v16@^16.0.0-beta.5:
+  version "16.0.0-beta.5"
+  resolved "https://registry.nlark.com/vue-loader-v16/download/vue-loader-v16-16.0.0-beta.5.tgz#4dc4993a1c01d5aaceb5b218dc59a82d53d53a56"
+  integrity sha1-TcSZOhwB1arOtbIY3FmoLVPVOlY=
   dependencies:
     "@types/mini-css-extract-plugin" "^0.9.1"
     chalk "^3.0.0"
@@ -10971,7 +10971,7 @@ vue-loader-v16@^16.0.0-beta.5.4:
     merge-source-map "^1.1.0"
     source-map "^0.6.1"
 
-"vue-loader-v16@npm:vue-loader@^16.1.0":
+"vue-loader-v16@npm:vue-loader@^16.1.0", vue-loader@^16.8.2:
   version "16.8.3"
   resolved "https://registry.npmmirror.com/vue-loader/download/vue-loader-16.8.3.tgz#d43e675def5ba9345d6c7f05914c13d861997087"
   integrity sha1-1D5nXe9bqTRdbH8FkUwT2GGZcIc=
@@ -10980,7 +10980,7 @@ vue-loader-v16@^16.0.0-beta.5.4:
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
 
-vue-loader@^15.9.2, vue-loader@^15.9.6:
+vue-loader@^15.9.2:
   version "15.9.8"
   resolved "https://registry.npmmirror.com/vue-loader/download/vue-loader-15.9.8.tgz#4b0f602afaf66a996be1e534fb9609dc4ab10e61"
   integrity sha1-Sw9gKvr2aplr4eU0+5YJ3EqxDmE=
