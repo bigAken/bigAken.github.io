@@ -14,8 +14,8 @@ ls
 ls
 ls
 ls
-ls
-git push -u origin master
+git pull origin --rebase
+git push -f origin master
 echo "success"
 echo "success"
 echo "success"
