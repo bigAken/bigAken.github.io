@@ -1,6 +1,3 @@
-<<<<<<< cc0659ffa92acc33afd66c5c6094fc2eba38f14a
-# bigAken
-=======
 <div align=center>
 
 <img alt="bigAken" src="./src/assets/avatar.png" width=100 />
@@ -45,4 +42,3 @@ I love Front End technologys. :heart:
 </p>
 
 </div>
->>>>>>> 发版
