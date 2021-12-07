@@ -13,7 +13,7 @@ git commit -m '发版'
 git remote add origin git@github.com:bigAken/bigAken.git
 ls
 ls
-git pull origin --rebase
+git pull origin master --rebase
 git push -f origin master
 echo "success"
 echo "success"
