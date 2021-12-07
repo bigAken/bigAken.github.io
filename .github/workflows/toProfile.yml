@@ -12,17 +12,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build Vue
         run: |
-          git config --global user.email "827094438@qq.com"
-          git config --global user.name "bigAken"
           mkdir profile 
           ls
           cp README.md ./profile/README.md
           ls
           cd profile
           ls
-          git config --global user.email "827094438@qq.com"
-          git config --global user.name "bigAken"
           git init
+          git config  user.email "827094438@qq.com"
+          git config  user.name "bigAken"
           git add .
           git commit -m '发版'
           git branch -M master
