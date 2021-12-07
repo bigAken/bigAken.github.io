@@ -26,7 +26,7 @@ jobs:
           git branch -M master
           git remote add origin git@github.com:bigAken/bigAken.git
           git pull --rebase origin master
-          git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken origin master
+          git push -u https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken origin master
         shell: bash
         env:
           CI: true
