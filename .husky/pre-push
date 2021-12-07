@@ -3,6 +3,7 @@ echo "start profile---------"
 rm -rf profile 
 mkdir profile
 cp README.md ./profile/README.md
+cp avatar.png ./profile/avatar.png
 cd profile
 git init
 git config  user.email "827094438@qq.com"

@@ -1,12 +1,7 @@
 <div align=center>
 
 <img alt="bigAken" src="./src/assets/avatar.png" width=100 />
-<<<<<<< 848d5c372b19f33061a19216b38247dc0b3adc88
-
-ceshi
-=======
-3333333
->>>>>>> 发版
+3333333444444
 
 # Hi, bigAken :wave:
 
