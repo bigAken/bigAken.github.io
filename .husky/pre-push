@@ -12,4 +12,4 @@ git remote add origin git@github.com:bigAken/bigAken.git
 git pull origin master
 ls
 git push -f origin master
-rm profile -y
+rm -rf profile 
