@@ -15,9 +15,7 @@ jobs:
           mkdir profile 
           ls
           cp README.md ./profile/README.md
-          ls
           cd profile
-          ls
           git init
           git config  user.email "827094438@qq.com"
           git config  user.name "bigAken"
@@ -26,6 +24,8 @@ jobs:
           git branch -M master
           git remote add origin git@github.com:bigAken/bigAken.git
           git pull --rebase origin master
+          ls
+          echo ${{ secrets }}
           git push -u https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken master:master
         shell: bash
         env:
