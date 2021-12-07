@@ -10,9 +10,12 @@ ls
 git add .
 git commit -m '发版'
 git remote add origin git@github.com:bigAken/bigAken.git
-git pull origin master
 ls
-git push -f origin master
+ls
+ls
+ls
+ls
+git push -u origin master
 echo "success"
 echo "success"
 echo "success"
