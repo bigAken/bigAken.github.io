@@ -2,29 +2,29 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 # vue-loader@16.8.3 这个包没有，该action废弃掉
-name: CI
-on:
-  push:
-    branches: [master]
-jobs:
-  # build_vue:
-  #   runs-on: ubuntu-latest
-  #   name: Build Vue
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Build Vue
-  #       run: |
-  #         node -v;
-  #         npm ci;
-  #         npm run build;
-  #         cd dist
-  #         ln -s index.html 404.html
-  #         git config --global user.email "827094438@qq.com"
-  #         git config --global user.name "bigAken"
-  #         git init
-  #         git add -A
-  #         git commit -m '发版'
-  #         git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken.github.io.git master:gh-pages
-  #       shell: bash
-  #       env:
-  #         CI: true
+# name: CI
+# on:
+#   push:
+#     branches: [master]
+# jobs:
+# build_vue:
+#   runs-on: ubuntu-latest
+#   name: Build Vue
+#   steps:
+#     - uses: actions/checkout@v2
+#     - name: Build Vue
+#       run: |
+#         node -v;
+#         npm ci;
+#         npm run build;
+#         cd dist
+#         ln -s index.html 404.html
+#         git config --global user.email "827094438@qq.com"
+#         git config --global user.name "bigAken"
+#         git init
+#         git add -A
+#         git commit -m '发版'
+#         git push -f https://bigAken:${{ secrets.GITHUB_TOKEN }}@github.com/bigAken/bigAken.github.io.git master:gh-pages
+#       shell: bash
+#       env:
+#         CI: true

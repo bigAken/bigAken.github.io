@@ -1,6 +1,6 @@
 # 发版到Github个人简介仓库
 
-name: profile
+# name: profile
 # on:
 #   push:
 #     branches: [master]
