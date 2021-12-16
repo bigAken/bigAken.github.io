@@ -50,7 +50,7 @@ module.exports = {
 
 ```css
 div {
-	color: red;
+color: red;
 }
 ```
 
