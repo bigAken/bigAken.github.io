@@ -1,5 +1,6 @@
 # 使用 stylelint 校验 css 代码（实践）
 
+[stylelint](http://stylelint.docschina.org/)
 一个强大的，现代的代码检查工具，可以帮助您避免错误并在您的样式中强制执行约定
 
 > 在阅读该文章前，请先大概了解 stylelint 的基本配置
