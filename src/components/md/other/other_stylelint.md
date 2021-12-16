@@ -10,6 +10,15 @@
 npm install stylelint --save-dev
 ```
 
+## 组成
+
+配置文件可以由 共享配置[extends](http://stylelint.docschina.org/)、规则[`rules`](http://stylelint.docschina.org/user-guide/rules/)、插件[plugins](http://stylelint.docschina.org/user-guide/plugins/)和处理器[processors](http://stylelint.docschina.org/user-guide/processors/)组成
+
+- 共享配置：最快捷的配置方式
+- 规则：规则确定了代码检查工具寻找和指正的内容
+- 插件：社区构建的规则和规则集，支持方法论、工具集、非标准 CSS 功能或非常具体的用例。他们的包名称以“stylelint”为前缀。他们的规则名称有命名空间，所以它们不会与 stylelint 的核心规则冲突
+- 处理器是一些社区包，使 stylelint 能够从非样式表文件中提取样式 （PostCSS 插件将忽略它们）
+
 ## 创建 stylelint 配置文件
 
 ```bash
@@ -85,11 +94,12 @@ module.exports = {
 
 ## 作为 PostCSS 插件在 postcss.config.js 配置文件中使用
 
-关于postCss使用请参考[官方文档](https://www.postcss.com.cn/)
+关于 postCss 使用请参考[官方文档](https://www.postcss.com.cn/)
 与任何其他 PostCSS 插件一样，您可以使用 stylelint 作为 PostCSS 插件
 具体参考官方文档[stylelint](http://stylelint.docschina.org/user-guide/postcss-plugin/)
 
 在`postcss.config.js`中配置如下
+
 ```js
 const stylelint = require('stylelint')
 module.exports = {
