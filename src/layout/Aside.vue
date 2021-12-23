@@ -76,8 +76,10 @@ export default {
 		height: 40px;
 		margin: 20px auto 0;
 		border-radius: 50%;
-		border: 1px solid #ccc;
+		border: 1px solid rgb(236, 236, 236);
 		background-color: pink;
+		background-image: url(../../avatar.png);
+		background-size: contain;
 	}
 	.catalog {
 		width: 100%;

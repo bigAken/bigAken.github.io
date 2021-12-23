@@ -1,5 +1,7 @@
 # 关于 JavaScript TC39 与 ECMAScript 提案
 
+参考[TC39 规范制定流程 ](https://www.cnblogs.com/ayqy/p/tc39-workflow.html)
+
 ## JavaScript 的诞生
 
 1995 年 5 月，一个叫 [Brendan Eich(布兰登·艾奇)](https://baike.baidu.com/item/%E5%B8%83%E5%85%B0%E7%99%BB%C2%B7%E8%89%BE%E5%A5%87/58101949?fromtitle=Brendan%20Eich&fromid=561441&fr=aladdin) 的人花 10 天创造了 JavaScript
@@ -64,7 +66,9 @@
 > 但实际发版时间是每年 6 月，可能是为了纪念历史上那些 6 月发布的元老版本
 
 ### 制定流程的 5 个阶段
-[TC39标准的进程](https://github.com/tc39/proposals)
+
+[TC39 标准的进程](https://github.com/tc39/proposals)
+
 - **stage0 strawman** 任何讨论、想法、改变或者还没加到提案的特性都在这个阶段。只有 TC39 成员可以提交
 - **stage1 proposal**
   1. 产出一个正式的提案。
