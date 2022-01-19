@@ -321,7 +321,7 @@ var button = document.getElementById('button')
 
 改进后的代码可以满足需求，我们要手动把 document 当作上下文 this 传入`_getElementById`：
 
-```html
+```Html
 <html>
 	<button id="button"></button>
 	<script>
@@ -372,7 +372,7 @@ Function.prototype.after = function (afterfn) {
 
 下面来试试用 Function.prototype.before 的威力:
 
-```html
+```Html
 <html>
 	<button id="button"></button>
 	<script>
@@ -445,7 +445,7 @@ a()
 
 比如页面中有一个登录 button，点击这个 button 会弹出登录浮层，与此同时要进行数据上报，来统计有多少用户点击了这个登录 button：
 
-```html
+```Html
 <html>
 	<button tag="login" id="button">点击打开登录浮层</button>
 	<script>
@@ -464,7 +464,7 @@ a()
 
 我们看到在 showLogin 函数里，既要负责打开登录浮层，又要负责数据上报，这是两个层面的功能，在此处却被耦合在一个函数里。使用 AOP 分离之后，代码如下：
 
-```html
+```Html
 <html>
 	<button tag="login" id="button">点击打开登录浮层</button>
 	<script>
