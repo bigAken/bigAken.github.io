@@ -415,3 +415,19 @@ export default {
 - 按需引入外部库
 - keep-alive 缓存使用
 - 服务端渲染和预渲染
+
+### Vue 项目按住 ctrl + 鼠标左键跳转对应组件
+
+安装 [vue Helper](https://marketplace.visualstudio.com/items?itemName=shenjiaolong.vue-helper) 插件
+
+设置 ==》 扩展 == 》 vue Helper ==》setting.json 编辑 添加或者修改如下内容
+
+```json
+"vue-helper.alias": {
+　　"@": "src"
+},
+"vue-helper.componentPrefix": {
+　　"alias": "@",
+　　"path": "src"
+}
+```
