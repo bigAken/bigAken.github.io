@@ -23,6 +23,20 @@ const store = new Vuex.Store({
 			state.count++
 		}
 	},
+	getters: {
+		asideMenu(state) {
+			// console.log('this.$store.state.menuLis', this.$store.state.menuList)
+			const temp = state.menuList.map(item => {
+				item.label = item.meta.title
+				if (Array.isArray(item.children) && item.children.length) {
+					item.children = item.children.map(child => ({ ...child, label: child.meta.title }))
+				}
+				return item
+			})
+			console.log('temp', temp)
+			return temp
+		},
+	},
 	modules: { ...storeModules }
 })
 

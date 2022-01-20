@@ -1,5 +1,7 @@
 <template>
-	<router-view></router-view>
+	<div>
+		<router-view></router-view>
+	</div>
 </template>
 <script>
 export default {
@@ -14,9 +16,7 @@ export default {
 			}
 		}
 	},
-	mounted() {
-		console.log(this.obj)
-	}
+	mounted() {}
 }
 </script>
 

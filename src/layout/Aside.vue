@@ -27,16 +27,7 @@ export default {
 	},
 	computed: {
 		asideMenu() {
-			// console.log('this.$store.state.menuLis', this.$store.state.menuList)
-			const temp = this.$store.state.menuList.map(item => {
-				item.label = item.meta.title
-				if (Array.isArray(item.children) && item.children.length) {
-					item.children = item.children.map(child => ({ ...child, label: child.meta.title }))
-				}
-				return item
-			})
-			console.log('temp', temp)
-			return temp
+			return  this.$store.getters.asideMenu
 		},
 		currentNodeKey() {
 			return this.$route.fullPath
