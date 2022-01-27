@@ -1,6 +1,6 @@
 <template>
 	<div class="mobile-index">
-		<el-dropdown class="fixed-top" :hide-on-click="false" size="mini" @command="dropdownMenuClick">
+		<el-dropdown class="mobile-top" :hide-on-click="false" size="mini" @command="dropdownMenuClick">
 			<span class="el-dropdown-link">
 				文章列表
 				<i class="el-icon-arrow-down el-icon--right"></i>
@@ -11,7 +11,9 @@
 				</el-dropdown-item>
 			</el-dropdown-menu>
 		</el-dropdown>
-		<router-view></router-view>
+		<div class="mobile-main">
+			<router-view></router-view>
+		</div>
 	</div>
 </template>
 <script>
@@ -58,12 +60,23 @@ export default {
 <style lang="scss" scoped>
 .mobile-index {
 	position: relative;
-	padding: 10px 15px;
+	padding: 40px 15px 0;
 	box-sizing: border-box;
-	.fixed-top {
+	.mobile-top {
 		position: absolute;
-		top: 10px;
-		left: 15px;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		padding-left: 10px;
+		box-sizing: border-box;
+		border-bottom: 1px solid #ccc;
+		background-color: #fff;
+	}
+	.mobile-main{
+		margin-top: 15px;
 	}
 }
 .el-dropdown-menu {
