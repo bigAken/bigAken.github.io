@@ -5,5 +5,6 @@ export default {
 	decorators: 'JavaScript装饰器',
 	'aop-decorator': 'JavaScript 设计模式之装饰者模式',
 	heapAndStack: "JavaScript栈堆",
-	oop: "Javascript 面向对象七大原则"
+	oop: "Javascript 面向对象七大原则",
+	reflect: "ES6 Reflect"
 }
