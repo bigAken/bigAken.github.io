@@ -6,5 +6,6 @@ export default {
 	'aop-decorator': 'JavaScript 设计模式之装饰者模式',
 	heapAndStack: "JavaScript栈堆",
 	oop: "Javascript 面向对象七大原则",
-	reflect: "ES6 Reflect"
+	reflect: "ES6 Reflect",
+	event: "事件冒泡、事件捕获、事件委托、事件绑定"
 }

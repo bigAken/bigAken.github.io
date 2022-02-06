@@ -34,8 +34,7 @@ export default {
 		}
 	},
 	methods: {
-		handleNodeClick(data, node) {
-			console.log('node', node)
+		handleNodeClick(data) {
 			if (Array.isArray(data.children)) {
 				return
 			}
