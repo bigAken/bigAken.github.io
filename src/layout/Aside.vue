@@ -7,6 +7,7 @@
 				:data="asideMenu"
 				node-key="fullPath"
 				highlight-current
+				default-expand-all
 				:props="defaultProps"
 				:current-node-key="currentNodeKey"
 				:default-expanded-keys="[currentNodeKey]"
