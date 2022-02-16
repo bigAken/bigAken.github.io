@@ -63,7 +63,7 @@ Router.prototype.push = function push(location) {
 	return originalPush.call(this, location).catch(err => err)
 }
 export const menuList = getMenuList(routes[0].children)
-
+console.log('routes',routes);
 export default new Router({
 	mode: 'hash',
 	routes
