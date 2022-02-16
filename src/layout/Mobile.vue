@@ -6,7 +6,7 @@
 				<i class="el-icon-arrow-down el-icon--right"></i>
 			</span>
 			<el-dropdown-menu slot="dropdown">
-				<el-dropdown-item :command="item.name" v-for="item in mdTree" :key="item.name">
+				<el-dropdown-item :command="item.name" v-for="item in mdList" :key="item.name">
 					{{ item.label }}
 				</el-dropdown-item>
 			</el-dropdown-menu>
@@ -20,6 +20,22 @@
 export default {
 	components: {},
 	computed: {
+		mdList() {
+			if (this.mdTree) {
+				const list = this.mdTree.reduce((list, menu) => {
+					if (Array.isArray(menu.children)) {
+						const temp = menu.children.map(item => {
+							const { fileName, fullPath, label, meta, name, path, title } = item
+							return { fileName, fullPath, label, meta, name, path, title }
+						})
+						return (list = [...list, ...temp])
+					}
+					return list
+				}, [])
+				return list
+			}
+			return []
+		},
 		mdTree() {
 			return this.$store.getters.asideMenu
 		},
@@ -27,10 +43,19 @@ export default {
 			return this.$route.name !== 'home'
 		}
 	},
-
+	watch: {
+		asideMenu: {
+			handler() {
+				console.log(111111, this.asideMenu)
+				console.log(this.$route)
+			},
+			immediate: true,
+			deep: true
+		}
+	},
 	methods: {
 		dropdownMenuClick(command) {
-			const mdItem = this.mdTree.find(md => md.name === command)
+			const mdItem = this.mdList.find(md => md.name === command)
 			if (mdItem) {
 				const { fullPath } = mdItem
 				this.$router.push(fullPath)
@@ -57,7 +82,7 @@ export default {
 		border-bottom: 1px solid #ccc;
 		background-color: #fff;
 	}
-	.mobile-main{
+	.mobile-main {
 		margin-top: 15px;
 	}
 }
