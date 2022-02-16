@@ -15,26 +15,24 @@ const storeModules = context.keys().reduce((tempModules, path) => {
 const store = new Vuex.Store({
 	namespaced: true,
 	state: {
-		count: 0,
 		menuList
 	},
 	mutations: {
-		increment(state) {
-			state.count++
-		}
+
 	},
 	getters: {
 		asideMenu(state) {
-			// console.log('this.$store.state.menuLis', this.$store.state.menuList)
-			const temp = state.menuList.map(item => {
-				item.label = item.meta.title
-				if (Array.isArray(item.children) && item.children.length) {
-					item.children = item.children.map(child => ({ ...child, label: child.meta.title }))
+			const list = state.menuList.reduce((list, menu) => {
+				if (Array.isArray(menu.children)) {
+					const temp = menu.children.map(item => {
+						const { fileName, fullPath, label, meta, name, path, title } = item
+						return { fileName, fullPath, label, meta, name, path, title }
+					})
+					return list = [...list, ...temp]
 				}
-				return item
-			})
-			console.log('temp', temp)
-			return temp
+				return list
+			}, [])
+			return list
 		},
 	},
 	modules: { ...storeModules }

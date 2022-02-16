@@ -10,5 +10,6 @@ export default {
 	event: "事件冒泡、事件捕获、事件委托、事件绑定",
 	designPatterns: "Javascript 设计模式概览",
 	singletonPattern: "JavaScript 设计模式之单例模式",
-	statePattern: "JavaScript 设计模式之状态模式"
+	statePattern: "JavaScript 设计模式之状态模式",
+	proxyPattern: "JavaScript 设计模式之代理模式"
 }
