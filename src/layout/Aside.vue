@@ -27,7 +27,7 @@ export default {
 	},
 	computed: {
 		asideMenu() {
-			return  this.$store.getters.asideMenu
+			return this.$store.getters.asideMenu
 		},
 		currentNodeKey() {
 			return this.$route.fullPath

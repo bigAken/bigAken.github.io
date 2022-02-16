@@ -1,7 +1,7 @@
 <template>
 	<div class="frame">
 		<Aside></Aside>
-		<div class="right-content">
+		<div class="right-content" ref="rightContent">
 			<router-view></router-view>
 		</div>
 	</div>
@@ -15,6 +15,17 @@ export default {
 	},
 	components: {
 		Aside
+	},
+	watch: {
+		'$route.path': {
+			handler() {
+				this.$nextTick(() => {
+					this.$refs['rightContent'].scroll(0, 0)
+				})
+			},
+			deep: true,
+			immediate: true
+		}
 	},
 	methods: {
 		testStoreModule() {
