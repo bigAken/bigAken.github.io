@@ -1,6 +1,8 @@
 <template>
 	<div class="aside-container">
 		<div class="top-user"></div>
+		<h2 class="user-name">aken</h2>
+		<el-button type="text">文章总数：{{ totalCount.length }}</el-button>
 		<div class="catalog">
 			<el-tree
 				ref="leftTree"
@@ -30,13 +32,20 @@ export default {
 		asideMenu() {
 			return this.$store.getters.asideMenu
 		},
+		totalCount() {
+			const tempArr = this.$store.getters.asideMenu.reduce((arr, item) => {
+				item.children && arr.push(...item.children)
+				return arr
+			}, [])
+			return tempArr
+		},
 		currentNodeKey() {
 			return this.$route.fullPath
 		}
 	},
 	methods: {
 		handleNodeClick(data) {
-			console.log('data',data);
+			console.log('data', data)
 			if (Array.isArray(data.children)) {
 				return
 			}
@@ -72,6 +81,10 @@ export default {
 		background-color: pink;
 		background-image: url(../../avatar.png);
 		background-size: contain;
+	}
+	.user-name{
+		text-align: center;
+		margin-top: 5px;
 	}
 	.catalog {
 		width: 100%;
