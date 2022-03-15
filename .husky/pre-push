@@ -21,7 +21,3 @@ rm -rf profile
 echo "end profile--------"
 echo "end profile--------"
 
-# 发版
-npm run build
-git  add .
-git commit -m 'blog'

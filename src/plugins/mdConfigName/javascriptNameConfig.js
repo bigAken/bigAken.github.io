@@ -13,5 +13,6 @@ export default {
 	statePattern: "JavaScript 设计模式之状态模式",
 	proxyPattern: "JavaScript 设计模式之代理模式",
 	publicSubscribePattern: "JavaScript 设计模式之发布订阅模式",
-	hosts: "hosts文件详解"
+	hosts: "hosts文件详解",
+	dns: "DNS 协议解析"
 }
