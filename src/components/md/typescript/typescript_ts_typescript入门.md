@@ -1,6 +1,8 @@
-### TypeScript 入门以及进阶
+# TypeScript 入门以及进阶
+
 [原文](https://mp.weixin.qq.com/s/Mx8kirBth0vSXf-rzxu2eQ)
-#### 函数定义
+
+## 函数定义
 
 ```ts
 const test: (age: number) => void = function (age) {
@@ -16,7 +18,7 @@ const arrow: (y: number) => void = y => {
 }
 ```
 
-#### 继承
+## 继承
 
 ```ts
 interface Person {
@@ -30,7 +32,7 @@ interface Man extends Person {
 }
 ```
 
-#### 小技巧
+## 小技巧
 
 ```ts
 // 定义一个对象;
@@ -51,7 +53,7 @@ type key = keyof Women
 // "age" | "sex" | "height"
 ```
 
-#### Intersection Types(交叉类型)
+## Intersection Types(交叉类型)
 
 交叉类型是一种将多种类型组合为一种类型的方法。这意味着你可以将给定的类型 A 与类型 B 或更多类型合并，并获得具有所有属性的单个类型。
 
@@ -76,7 +78,7 @@ showType({ id: 1, left: 'test', right: 'test' })
 // Output: {id: 1, left: "test", right: "test"}
 ```
 
-#### Union Types(联合类型)
+## Union Types(联合类型)
 
 联合类型使你可以赋予同一个变量不同的类型
 
@@ -94,13 +96,13 @@ showType(7)
 // Output: 7
 ```
 
-#### Generic Types(泛型)
+## Generic Types(泛型)
 
 泛型类型是复用给定类型的一部分的一种方式。它有助于捕获作为参数传递的类型 T。
 
 > **优点:** 创建可重用的函数，一个函数可以支持多种类型的数据。这样开发者就可以根据自己的数据类型来使用函数
 
-##### 泛型函数
+### 泛型函数
 
 如何创建泛型类型:需要使用<>并将 T(名称可自定义)作为参数传递。 🌰 栗子中， 我们给 showType 添加了类型变量 T。T 帮助我们捕获用户传入的参数的类型(比如：number/string)之后我们就可以使用这个类型
 
@@ -116,7 +118,7 @@ showType(1)
 // Output: 1
 ```
 
-##### 泛型接口
+### 泛型接口
 
 注:泛型变量约束了整个接口后，在实现的时候，必须指定一个类型
 
@@ -140,7 +142,7 @@ function showTypeTwo(args: GenericType<number>) {
 showTypeTwo({ id: 1, name: 4 })
 ```
 
-##### 多参数的泛型类型
+### 多参数的泛型类型
 
 泛型类型可以接收多个参数。
 
@@ -165,9 +167,9 @@ showTypeTwo({ id: '001', name: ['This', 'is', 'a', 'Test'] })
 // Output: {id: "001", name: Array["This", "is", "a", "Test"]}
 ```
 
-#### Utility Types(内置类型)
+## Utility Types(内置类型)
 
-##### Partial
+### Partial
 
 允许你将 T 类型的所有属性设为可选。它将在每一个字段后面添加一个?
 
@@ -196,7 +198,7 @@ showType({ id: 1 })
 showType({ firstName: 'John', lastName: 'Doe' })
 ```
 
-##### Required
+### Required
 
 将某个类型里的属性全部变为必选项
 
@@ -212,7 +214,7 @@ function showType(args: Required<RequiredType>) {
 }
 ```
 
-##### Readonly
+### Readonly
 
 会转换类型的所有属性，以使它们无法被修改
 
@@ -240,7 +242,7 @@ interface ReadonlyType {
 }
 ```
 
-##### Pick
+### Pick
 
 此方法允许你从一个已存在的类型 T 中选择一些属性作为 K, 从而创建一个新类型
 
@@ -278,7 +280,7 @@ showType({ id: 3 })
 // Error: Object literal may only specify known properties, and 'id' does not exist in type 'Pick<PickType, "firstName" | "lastName">'
 ```
 
-##### Omit
+### Omit
 
 Omit 的作用与 Pick 类型正好相反。不是选择元素，而是从类型 T 中删除 K 个属性。
 
@@ -300,7 +302,7 @@ showType({ firstName: 'John' })
 // Error: Object literal may only specify known properties, and 'firstName' does not exist in type 'Pick<PickType, "id">'
 ```
 
-##### Extract
+### Extract
 
 Extract<T, U> : 提取 T 中可以赋值给 U 的类型-- **取交集**
 
@@ -321,7 +323,7 @@ type ExtractType = Extract<keyof FirstType, keyof SecondType>
 // Output: "id"
 ```
 
-##### Exclude
+## Exclude
 
 Exclude<T, U> --从 T 中剔除可以赋值给 U 的类型。
 
@@ -345,7 +347,7 @@ type ExcludeType = Exclude<keyof FirstType, keyof SecondType>
 
 上面的代码可以看到，属性 firstName 和 lastName 在 SecondType 类型中不存在。通过使用 Extract 关键字，我们可以获得 T 中存在而 U 中不存在的字段
 
-##### Record
+### Record
 
 Record<K,T> 给定类型 T 的一组属性 K 的类型,将一个类型的属性映射到另一个类型的属性时，Record 非常方便。
 
@@ -367,7 +369,7 @@ let employees: Record<number, EmployeeType> = {
 // 2: { id: 3, fullname: "Sara Duckson", role: "Developer" }
 ```
 
-##### NonNullable
+### NonNullable
 
 NonNullable<T> 从 T 中剔除 null 和 undefined
 
@@ -391,7 +393,7 @@ showType(undefined)
 // Error: Argument of type 'undefined' is not assignable to parameter of type 'string | number'.
 ```
 
-#### Mapped Types( 映射类型)
+## Mapped Types( 映射类型)
 
 映射类型允许你从一个旧的类型，生成一个新的类型。
 
@@ -430,7 +432,7 @@ showType({ id: 'testId', name: 'This is a Test' })
 
 #### Type Guards(类型保护)
 
-##### typeof
+### typeof
 
 ```ts
 function showType(x: number | string) {
@@ -447,7 +449,7 @@ showType(7)
 // Output: The result is 14
 ```
 
-##### instanceof
+### instanceof
 
 ```ts
 class Foo {
@@ -476,7 +478,7 @@ showType(new Bar())
 // Error: The type is not supported
 ```
 
-##### in
+### in
 
 使用 in 检查参数对象上是否存在属性 x
 
@@ -501,4 +503,19 @@ showType({ x: 7 })
 
 showType({ y: 'ccc' })
 // Error: This type is not expected
+```
+
+## interface 和 type 的区别
+
+明人不说暗话，直接上区别，下面是引入 ts 官方术语
+
+```txt
+An interface can be named in an extends or implements clause, but a type alias for an object type literal cannot.
+An interface can have multiple merged declarations, but a type alias for an object type literal cannot.
+```
+
+翻译大概如下
+
+```txt
+一个接口可以通过扩展或实现被重新生命,但一个对象的type不能。 　　一个接口可以有多个合并的声明,但是一个对象的类型不能。
 ```

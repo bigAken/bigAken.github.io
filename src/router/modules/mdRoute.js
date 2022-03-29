@@ -26,6 +26,9 @@ console.log('reactMdRoutes', reactMdRoutes);
 const otherMdRoutes = childRoutes.filter(item => {
 	return /^(other)/i.test(item.fileName)
 })
+const typescriptMdRoutes = childRoutes.filter(item => {
+	return /^(typescript)/i.test(item.fileName)
+})
 export default [
 
 	{
@@ -45,6 +48,15 @@ export default [
 			title: 'js相关md文件'
 		},
 		children: [...jsMdRoutes]
+	},
+	{
+		path: 'tsMd',
+		name: 'tsMd',
+		component: md,
+		meta: {
+			title: 'ts相关md文件'
+		},
+		children: [...typescriptMdRoutes]
 	},
 	{
 		path: 'cssMd',

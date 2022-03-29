@@ -45,7 +45,7 @@ const routes = [
 		]
 	}
 ]
-console.log('autoImportRoute',autoImportRoute);
+console.log('autoImportRoute', autoImportRoute)
 function getMenuList(routes, parent = { fullPath: '', path: '' }) {
 	const tempMenu = routes.map(item => {
 		item.fullPath = `${parent.fullPath || parent.path}${item.path.includes('/') ? '' : '/'}${item.path}`
@@ -63,7 +63,7 @@ Router.prototype.push = function push(location) {
 	return originalPush.call(this, location).catch(err => err)
 }
 export const menuList = getMenuList(routes[0].children)
-console.log('routes',routes);
+console.log('routes', routes)
 export default new Router({
 	mode: 'hash',
 	routes
