@@ -14,5 +14,6 @@ export default {
 	proxyPattern: "JavaScript 设计模式之代理模式",
 	publicSubscribePattern: "JavaScript 设计模式之发布订阅模式",
 	hosts: "hosts文件详解",
-	dns: "DNS 协议解析"
+	dns: "DNS 协议解析",
+	proxy:"JavaScript Proxy 以及 Reflect"
 }

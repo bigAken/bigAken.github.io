@@ -1,7 +1,7 @@
 <template>
 	<div class="aside-container">
 		<div class="top-user"></div>
-		<h2 class="user-name">aken</h2>
+		<h2 class="user-name">aken(邓*强)</h2>
 		<el-button type="text">文章总数：{{ totalCount.length }}</el-button>
 		<div class="catalog">
 			<el-tree
