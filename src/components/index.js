@@ -11,7 +11,6 @@ componentCtx.keys().forEach(fileName => {
 	// 截取路径作为组件名
 	const reqComName = fileName.replace(/(.*\/)*([^.]+).*/gi, '$2')
 	const temp = reqComName.split('_')
-
 	// md组件需要绑定一个data
 	if (/\.md$/.test(fileName)) {
 		component.data = function () {
