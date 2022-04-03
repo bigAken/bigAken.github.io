@@ -15,5 +15,7 @@ export default {
 	publicSubscribePattern: 'JavaScript 设计模式之发布订阅模式',
 	hosts: 'hosts文件详解',
 	dns: 'DNS 协议解析',
-	proxy: 'JavaScript Proxy 以及 Reflect'
+	proxy: 'JavaScript Proxy 以及 Reflect',
+	about: 'JavaScript 知识碎片',
+	httpHeader: '常用的 http 请求头以及响应头'
 }
