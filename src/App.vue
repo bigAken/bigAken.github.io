@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<router-view></router-view>
-		<button @click="setSome">12312</button>
 	</div>
 </template>
 <script>
