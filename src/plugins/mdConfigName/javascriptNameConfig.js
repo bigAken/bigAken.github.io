@@ -17,5 +17,7 @@ export default {
 	dns: 'DNS 协议解析',
 	proxy: 'JavaScript Proxy 以及 Reflect',
 	about: 'JavaScript 知识碎片',
-	httpHeader: '常用的 http 请求头以及响应头'
+	dataType: '判断 JS 数据类型的四种方法',
+	httpHeader: '常用的 http 请求头以及响应头',
+	WebSocket: 'WebSocket简单使用'
 }

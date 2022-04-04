@@ -1,13 +1,19 @@
 <template>
 	<div>
 		<router-view></router-view>
+		<button @click="setSome">12312</button>
 	</div>
 </template>
 <script>
 export default {
 	name: 'App',
 	components: {},
-	methods: {},
+	methods: {
+		setSome() {
+			console.log(132123);
+			sessionStorage.setItem('test',Math.random())
+		}
+	},
 	data() {
 		return {
 			id: 'test',
@@ -16,7 +22,11 @@ export default {
 			}
 		}
 	},
-	mounted() {}
+	mounted() {
+		window.addEventListener('storage', e => {
+			console.log('storage值发生变化后触发:', e)
+		})
+	}
 }
 </script>
 

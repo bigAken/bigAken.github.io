@@ -32,6 +32,9 @@ const typescriptMdRoutes = childRoutes.filter(item => {
 const miniProMdRoutes = childRoutes.filter(item => {
 	return /^(miniPro)/i.test(item.fileName)
 })
+const htmlMdRoutes = childRoutes.filter(item => {
+	return /^(html)/i.test(item.fileName)
+})
 export default [
 
 	{
@@ -69,6 +72,15 @@ export default [
 			title: 'css相关md文件'
 		},
 		children: [...cssMdRoutes]
+	},
+	{
+		path: 'htmlMd',
+		name: 'htmlMd',
+		component: md,
+		meta: {
+			title: 'html相关md文件'
+		},
+		children: [...htmlMdRoutes]
 	},
 	{
 		path: 'miniProMd',
