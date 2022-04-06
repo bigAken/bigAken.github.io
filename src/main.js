@@ -29,3 +29,4 @@ new Vue({
 	store,
 	router: router
 }).$mount('#app')
+
