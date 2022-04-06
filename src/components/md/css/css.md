@@ -42,3 +42,79 @@ IE 盒模型和 W3C 标准盒模型的区别：
 - width:100%会使元素 box 的宽度等于父元素的 contentbox 的宽度。如果加上 padding，border 就会超出父盒子宽度
 - width:auto 会使元素撑满整个父元素，margin、border、padding、content 区域会自动分配水
   平空间，不会超出父盒子
+
+## 媒体查询
+
+```Html
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: red;
+      width: 50px;
+      height: 50px;
+      transition: all 10s;
+    }
+    @media screen and (min-width: 900px) {
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: pink;
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      .box {
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+      }
+    }
+    @media screen and (min-width: 1100px) {
+      .box {
+        height: 400px;
+        width: 400px;
+        background-color: yellow;
+      }
+    }
+  </style>
+</head>
+<body>
+  <divclass="box">websoket</div>
+</body>
+</html>
+```
+
+## css3 新增属性
+
+```css
+.box {
+	height: 100px;
+	width: 100px;
+	border: 15px solid black;
+	animation: changebox 1s ease-in-out 1s infinite alternate running forwards;
+}
+
+.box:hover {
+	animation-play-state: paused;
+}
+
+@keyframes changebox {
+	10% {
+		background: red;
+	}
+	50% {
+		width: 80px;
+	}
+	70% {
+		border: 15px solid yellow;
+	}
+	100% {
+		width: 180px;
+		height: 180px;
+	}
+}
+```
